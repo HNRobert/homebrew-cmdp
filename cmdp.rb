@@ -3,7 +3,8 @@ class Cmdp < Formula
   homepage "https://github.com/HNRobert/homebrew-cmdp"
   url "https://github.com/HNRobert/CMD-Media-Player/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "a81ad12bccdd1607ee212caaaaf11ef3f2d7ad846826debc965afc26aebaf68a"
-
+  version "1.1.0"
+  
   license "MIT"
 
   depends_on "cmake" => :build
