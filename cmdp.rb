@@ -1,8 +1,19 @@
-class CmdMediaPlayer < Formula
+class Cmdp < Formula
   desc "CMD-Media-Player for Homebrew"
-  homepage "https://github.com/HNRobert/homebrew-cmdp"
-  url "https://github.com/HNRobert/CMD-Media-Player/archive/refs/tags/v1.0.1-beta.2.tar.gz"
-  sha256 "30c9fdfb56926cfbb10dd64a1d607c3ff6ba74dd9664e7cd61705928b6f7a18f"
+  homepage "https://github.com/HNRobert/CMD-Media-Player"
+  
+  livecheck do
+    url :homepage
+    strategy :github_latest
+  end
+  
+  stable do
+    version (stable_tag = `git ls-remote --tags --refs --sort=v:refname https://github.com/HNRobert/CMD-Media-Player.git | awk -F '/' '{print $3}' | tail -n1`.chomp)
+    url "https://github.com/HNRobert/CMD-Media-Player.git",
+        tag:      stable_tag,
+        shallow:  true
+  end
+
   license "MIT"
 
   depends_on "cmake" => :build
@@ -14,11 +25,8 @@ class CmdMediaPlayer < Formula
 
   def install
     args = std_cmake_args
-
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
-    end
+    system "cmake", ".", *args
+    system "make", "install"
 
     bin.install_symlink "cmd-media-player" => "cmdp"
   end
