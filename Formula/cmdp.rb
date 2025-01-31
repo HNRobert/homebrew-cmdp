@@ -1,8 +1,8 @@
 class Cmdp < Formula
   desc "CMD-Media-Player for Homebrew"
   homepage "https://github.com/HNRobert/homebrew-cmdp"
-  url "https://github.com/HNRobert/CMD-Media-Player/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "0863dadb591dd2f2aba8066ee6b7d2e289ca21bc9f7cac2cf77980dd834ce8fd"
+  url "https://github.com/HNRobert/CMD-Media-Player/archive/refs/tags/v1.1.3.tar.gz"
+  sha256 "8f225bf994822b7ef6912284046b979c96c5c4c4ebb595175444915a94c9633e"
 
   license "MIT"
 
