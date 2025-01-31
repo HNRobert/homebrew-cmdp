@@ -8,10 +8,11 @@ class Cmdp < Formula
 
   depends_on "cmake" => :build
   depends_on "ffmpeg"
-  depends_on "ncurses"
   depends_on "opencv"
   depends_on "readline"
   depends_on "sdl2"
+  
+  uses_from_macos "ncurses"
 
   def install
     args = std_cmake_args
